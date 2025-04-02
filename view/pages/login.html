@@ -6,6 +6,7 @@
     <title>Login - Ponte Guapa</title>
     <link rel="stylesheet" href="../styles/login.css">
 </head>
+
 <body>
 <div class="background-container">
     <img src="../resources/images/background.jpeg" alt="Fondo" class="background-image"/>
@@ -65,16 +66,7 @@
     </div>
 </main>
 
-<script>
-    // Toggle password visibility
-    document.querySelector('.eye-icon').addEventListener('click', function() {
-        const passwordInput = document.getElementById('password');
-        if (passwordInput.type === 'password') {
-            passwordInput.type = 'text';
-        } else {
-            passwordInput.type = 'password';
-        }
-    });
-</script>
+<script src="../scripts/PasswordVisibilty.js"></script>
+
 </body>
 </html>
