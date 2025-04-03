@@ -63,7 +63,7 @@
     // Script para manejar el cierre de sesión
     document.getElementById('logoutBtn').addEventListener('click', function() {
         // Enviar solicitud para cerrar sesión
-        fetch('/logout', {
+        fetch(window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/')) + '/../logout', {
             method: 'POST'
         })
             .then(response => {

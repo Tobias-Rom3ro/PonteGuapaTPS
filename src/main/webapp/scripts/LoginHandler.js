@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
         formData.append('password', password);
 
         // Enviar solicitud de login al servidor
-        fetch('/login', {
+        fetch(window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/')) + '/../login', {
             method: 'POST',
             body: formData
         })
