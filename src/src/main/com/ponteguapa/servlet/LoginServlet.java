@@ -40,7 +40,8 @@ public class LoginServlet extends HttpServlet {
         }
 
         // Usuario no logueado, mostrar página de login
-        request.getRequestDispatcher("/pages/login.html").forward(request, response);
+        response.sendRedirect(request.getContextPath() + "/pages/login.html");
+
     }
 
     /**

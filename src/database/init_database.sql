@@ -19,7 +19,7 @@ DO $$
 BEGIN
     IF NOT EXISTS (SELECT 1 FROM users WHERE role = 'admin') THEN
         INSERT INTO users (username, password, email, role)
-        VALUES ('admin', '$2a$10$Jm/sjzN9Yaj1vT0x6QWUIOtnPrDIwEu9SnXm2tXM6lBzKblLUVEqO', 'admin@ponteguapa.com', 'admin');
+        VALUES ('admin', 'admin123', 'admin@ponteguapa.com', 'admin');
 END IF;
 END $$;
 
