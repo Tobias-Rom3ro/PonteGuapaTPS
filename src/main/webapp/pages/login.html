@@ -4,19 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - Ponte Guapa</title>
-    <link rel="stylesheet" href="/styles/login.css">
+    <link rel="stylesheet" href="../styles/login.css">
 </head>
 
 <body>
 <div class="background-container">
-    <img src="/resources/images/background.jpeg" alt="Fondo" class="background-image"/>
+    <img src="../resources/images/background.jpeg" alt="Fondo" class="background-image"/>
 </div>
 
 <main class="login-container">
     <div class="login-card">
         <div class="login-content">
             <div class="login-header">
-                <img src="/resources/icons/icon.png" alt="Logo Ponte Guapa" class="logo" />
+                <img src="../resources/icons/icon.png" alt="Logo Ponte Guapa" class="logo" />
                 <h1>¡Bienvenida!</h1>
                 <p class="subtitle">Inicia sesión para continuar</p>
             </div>
@@ -24,14 +24,14 @@
             <form class="login-form">
                 <div class="form-group">
                     <label for="email">Usuario</label>
-                    <input type="email" id="email" placeholder="Email o número de celular" class="form-input">
+                    <input name="email" type="email" id="email" placeholder="Email o número de celular" class="form-input">
                 </div>
 
                 <div class="form-group">
                     <label for="password">Contraseña</label>
                     <div class="password-container">
-                        <input id="password" type="password" placeholder="Ingresar contraseña" class="form-input">
-                        <img class="eye-icon" src="/resources/icons/icon-eye.png" alt="Ver">
+                        <input name="password" id="password" type="password" placeholder="Ingresar contraseña" class="form-input">
+                        <img class="eye-icon" src="../resources/icons/icon-eye.png" alt="Ver">
                     </div>
                 </div>
 
@@ -52,7 +52,7 @@
                 </div>
 
                 <button type="button" class="google-button">
-                    <img src="/resources/icons/icon-google.svg" alt="Google" width="18" height="18">
+                    <img src="../resources/icons/icon-google.svg" alt="Google" width="18" height="18">
                     Inicia sesión con Google
                 </button>
             </form>
@@ -66,8 +66,8 @@
     </div>
 </main>
 
-<script src="/scripts/LoginHandler.js"></script>
-<script src="/scripts/PasswordVisibilty.js"></script>
+<script src="../scripts/LoginHandler.js"></script>
+<script src="../scripts/PasswordVisibilty.js"></script>
 
 </body>
 </html>

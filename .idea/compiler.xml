@@ -6,8 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="ponteguapa-webapp" />
+        <module name="ponteguapa" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="ponteguapa-webapp" target="19" />
+    </bytecodeTargetLevel>
   </component>
 </project>

@@ -6,19 +6,39 @@
 
     <display-name>PonteGuapa</display-name>
 
+    <!-- Página de inicio -->
     <welcome-file-list>
         <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>
 
+    <!-- Configuración de sesión -->
     <session-config>
         <session-timeout>30</session-timeout>
     </session-config>
 
+    <!-- Mapeo de recursos estáticos -->
     <servlet-mapping>
         <servlet-name>default</servlet-name>
         <url-pattern>/styles/*</url-pattern>
         <url-pattern>/resources/*</url-pattern>
         <url-pattern>/scripts/*</url-pattern>
+    </servlet-mapping>
+
+    <!-- Definición del servlet -->
+    <servlet>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>com.ponteguapa.servlet.LoginServlet</servlet-class>
+    </servlet>
+
+    <!-- Mapeo del servlet -->
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/login</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>default</servlet-name>
+        <url-pattern>*.html</url-pattern>
     </servlet-mapping>
 
 
