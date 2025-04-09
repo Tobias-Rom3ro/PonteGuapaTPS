@@ -1,66 +1,233 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 💻 Ponte Guapa - TPS. 
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+![Login Ponte Guapa](public/resources/images/app.png)
 
-## About Laravel
+## ✨ Introducción
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Este proyecto es el desarrollo de un sistema de información transaccional hecho con Laravel que permite la gestión y administración de servicios de la empresa **Ponte Guapa**. La plataforma ofrece una interfaz elegante para que los usuarios puedan registrarse, iniciar sesión, gestionar su perfil, agendar citas y explorar servicios. Para los administradores, existe un panel de control desde donde se puede gestionar usuarios, productos, citas y estadísticas.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## 🏗️ Estructura del Proyecto (MVC)
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Este proyecto sigue el patrón arquitectónico Modelo-Vista-Controlador (MVC) característico de Laravel, organizando el código de manera intuitiva y mantenible:
 
-## Learning Laravel
+### 📊 Modelos (Models)
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Los modelos representan las entidades del sistema y la lógica de negocio:
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+- `User.php`: Define la estructura de usuarios con propiedades como nombre, email y contraseña.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### 🖼️ Vistas (Views)
 
-## Laravel Sponsors
+Las vistas son las interfaces con las que interactúan los usuarios:
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+- **Auth**: Contiene las vistas para procesos de autenticación:
+  - `login.blade.php`: Formulario de inicio de sesión
+  - `register.blade.php`: Formulario de registro
+  - `reset-password.blade.php`: Vista para restablecer contraseña
+  - `forgot-password.blade.php`: Vista para solicitar recuperación de contraseña
 
-### Premium Partners
+- **Dashboard**: 
+  - `dashboard.blade.php`: Panel principal para usuarios autenticados
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+- **Profile**:
+  - Vistas para editar información del perfil de usuario
 
-## Contributing
+### 🎮 Controladores (Controllers)
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Los controladores manejan las solicitudes HTTP y la lógica de la aplicación:
 
-## Code of Conduct
+- **Auth Controllers**:
+  - `AuthenticatedSessionController.php`: Gestiona el inicio y cierre de sesión
+  - `RegisteredUserController.php`: Maneja el registro de nuevos usuarios
+  - `PasswordResetLinkController.php`: Administra las solicitudes de restablecimiento
+  - `NewPasswordController.php`: Controla el proceso de nueva contraseña
+  - `PasswordController.php`: Gestiona actualizaciones de contraseña
+  - `EmailVerificationNotificationController.php`: Maneja notificaciones de verificación
+  
+- **Profile Controller**:
+  - `ProfileController.php`: Gestiona la edición y eliminación de perfil
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### 🛣️ Rutas (Routes)
 
-## Security Vulnerabilities
+- `web.php`: Define las rutas principales de la aplicación
+- `auth.php`: Contiene las rutas específicas para la autenticación
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+## 📂 Estructura de Directorios
 
-## License
+```
+ponte-guapa/
+│
+├── app/                            # Núcleo de la aplicación
+│   ├── Http/
+│   │   ├── Controllers/            # Controladores de la aplicación
+│   │   │   ├── Auth/               # Controladores de autenticación
+│   │   │   │   ├── AuthenticatedSessionController.php
+│   │   │   │   ├── ConfirmablePasswordController.php
+│   │   │   │   ├── EmailVerificationNotificationController.php
+│   │   │   │   ├── EmailVerificationPromptController.php
+│   │   │   │   ├── NewPasswordController.php
+│   │   │   │   ├── PasswordController.php
+│   │   │   │   ├── PasswordResetLinkController.php
+│   │   │   │   ├── RegisteredUserController.php
+│   │   │   │   └── VerifyEmailController.php
+│   │   │   ├── Controller.php
+│   │   │   └── ProfileController.php
+│   │   └── Requests/               # Validación de formularios
+│   │       └── Auth/
+│   │           └── LoginRequest.php
+│   │
+│   ├── Models/                     # Modelos de la aplicación
+│   │   └── User.php
+│   │
+│   └── Providers/                  # Proveedores de servicios
+│
+├── bootstrap/                      # Archivos de inicialización
+│
+├── config/                         # Configuración de la aplicación
+│
+├── database/                       # Migraciones y semillas
+│   ├── factories/
+│   ├── migrations/
+│   └── seeders/
+│
+├── public/                         # Archivos accesibles públicamente
+│   ├── styles/                     # Hojas de estilo CSS compiladas
+│   │   ├── login.css
+│   │   ├── register.css
+│   │   └── dashboard.css
+│   │
+│   └── resources/                  # Recursos estáticos
+│       ├── icons/
+│       │   ├── icon.png
+│       │   ├── icon-eye.png
+│       │   └── icon-google.svg
+│       └── images/
+│           └── background.jpeg
+│
+├── resources/                      # Recursos de la aplicación
+│   ├── css/                        # Archivos de estilo (Tailwind)
+│   │   └── app.css
+│   ├── js/                         # Scripts JavaScript
+│   │   ├── app.js
+│   │   └── bootstrap.js
+│   └── views/                      # Vistas Blade
+│       ├── auth/
+│       │   ├── confirm-password.blade.php
+│       │   ├── forgot-password.blade.php
+│       │   ├── login.blade.php
+│       │   ├── register.blade.php
+│       │   ├── reset-password.blade.php
+│       │   └── verify-email.blade.php
+│       ├── dashboard.blade.php
+│       └── profile/
+│           └── edit.blade.php
+│
+├── routes/                         # Definición de rutas
+│   ├── auth.php                    # Rutas de autenticación
+│   ├── web.php                     # Rutas web principales
+│   ├── api.php                     # Rutas API
+│   └── console.php                 # Rutas para comandos
+│
+├── storage/                        # Almacenamiento (logs, cache, etc.)
+│
+├── tests/                          # Pruebas automatizadas
+│
+├── vendor/                         # Dependencias de Composer
+│
+├── .env.example                    # Ejemplo de configuración de entorno
+├── artisan                         # CLI de Laravel
+├── composer.json                   # Dependencias de PHP
+├── package.json                    # Dependencias de JavaScript
+└── README.md                       # Este archivo
+```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## 🚀 Instalación y Configuración Local
+
+Sigue estos pasos para configurar y ejecutar el proyecto en tu entorno local:
+
+### Requisitos Previos
+
+- [XAMPP](https://www.apachefriends.org/index.html) (con PHP 8.1+ y MySQL)
+- [Composer](https://getcomposer.org/download/)
+- [Node.js](https://nodejs.org/en/) y NPM
+
+### Pasos de Instalación
+
+1. **Clonar el repositorio**
+
+```bash
+git clone https://github.com/tu-usuario/ponte-guapa.git
+cd ponte-guapa
+```
+
+2. **Instalar dependencias de PHP**
+
+```bash
+composer install
+```
+
+3. **Instalar dependencias de JavaScript**
+
+```bash
+npm install
+npm run dev
+```
+
+4. **Configurar el entorno**
+
+```bash
+cp .env.example .env
+php artisan key:generate
+```
+
+5. **Configurar la base de datos**
+
+- Inicia XAMPP y activa los servicios Apache y MySQL
+- Accede a PhpMyAdmin: http://localhost/phpmyadmin
+- Crea una nueva base de datos llamada `ponteguapa`
+- Edita el archivo `.env` con los datos de tu conexión:
+
+```
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=ponteguapa
+DB_USERNAME=root
+DB_PASSWORD=
+```
+
+6. **Ejecutar migraciones**
+
+```bash
+php artisan migrate
+```
+
+7. **Crear datos de prueba (opcional)**
+
+```bash
+php artisan db:seed
+```
+
+8. **Iniciar el servidor**
+
+```bash
+php artisan serve
+```
+
+9. **Acceder a la aplicación**
+
+Abre tu navegador y visita: http://localhost:8000
+
+## 🔧 Funcionalidades Principales
+
+- Sistema completo de autenticación de usuarios (registro, login, recuperación de contraseña)
+- Panel de administración con información relevante
+- Gestión de perfiles de usuario
+- Sistema preparado para gestión de citas, productos y usuarios
+
+## 🛠️ Tecnologías Utilizadas
+
+- **Backend**: Laravel 10.x, PHP 8.1+
+- **Frontend**: Blade, Tailwind CSS, Alpine.js
+- **Base de datos**: MySQL
+- **Autenticación**: Laravel Breeze
