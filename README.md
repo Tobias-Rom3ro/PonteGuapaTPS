@@ -173,14 +173,7 @@ npm install
 npm run dev
 ```
 
-4. **Configurar el entorno**
-
-```bash
-cp .env.example .env
-php artisan key:generate
-```
-
-5. **Configurar la base de datos**
+4. **Configurar la base de datos**
 
 - Inicia XAMPP y activa los servicios Apache y MySQL
 - Accede a PhpMyAdmin: http://localhost/phpmyadmin
@@ -196,25 +189,25 @@ DB_USERNAME=root
 DB_PASSWORD=
 ```
 
-6. **Ejecutar migraciones**
+5. **Ejecutar migraciones**
 
 ```bash
 php artisan migrate
 ```
 
-7. **Crear datos de prueba (opcional)**
+6. **Crear datos de prueba (ejecutar los seeders de datos)**
 
 ```bash
 php artisan db:seed
 ```
 
-8. **Iniciar el servidor**
+7. **Iniciar el servidor**
 
 ```bash
 php artisan serve
 ```
 
-9. **Acceder a la aplicación**
+8. **Acceder a la aplicación**
 
 Abre tu navegador y visita: http://localhost:8000
 
@@ -225,9 +218,16 @@ Abre tu navegador y visita: http://localhost:8000
 - Gestión de perfiles de usuario
 - Sistema preparado para gestión de citas, productos y usuarios
 
-## 🛠️ Tecnologías Utilizadas
-
-- **Backend**: Laravel 10.x, PHP 8.1+
-- **Frontend**: Blade, Tailwind CSS, Alpine.js
+## Tecnologías Utilizadas
+- **Backend**: Laravel 12.10.2, PHP 8.2
+- **Frontend**: Tailwind CSS, Alpine.js, Blade
+- **Panel Admin**: Filament
 - **Base de datos**: MySQL
-- **Autenticación**: Laravel Breeze
+- **Gestión de paquetes**: Composer, NPM
+- **Testing**: Pest, PHPUnit
+
+## Comandos útiles
+- Ejecutar servidor de desarrollo: `php artisan serve`
+- Optimizar la ejecución en el servidor de desarrollo: `php artisan optimize`
+- Ejecutar migraciones: `php artisan migrate`
+

@@ -84,4 +84,5 @@
         </div>
     </div>
 </main>
+<script src="{{ asset('js/PasswordVisibility.js') }}"></script>
 </body>

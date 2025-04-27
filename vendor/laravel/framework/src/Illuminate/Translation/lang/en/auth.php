@@ -13,8 +13,9 @@ return [
     |
     */
 
-    'failed' => 'Los credenciales proporcionadas no existen en nuestro registro.',
-    'password' => 'La contraseña es incorrecta.',
-    'throttle' => 'Muchos intentos, por favor intenta de nuevo en: seconds segundos.',
+    'failed' => 'Estas credenciales no coinciden con nuestros registros.',
+    'password' => 'La contraseña proporcionada es incorrecta.',
+    'throttle' => 'Demasiados intentos de inicio de sesión. Por favor, inténtalo de nuevo en :seconds segundos.',
+
 
 ];

@@ -9,8 +9,8 @@ Route::get('/', function () {
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
+        return redirect()->route('filament.admin.pages.dashboard');
+    })->middleware(['auth'])->name('dashboard');
 });
 
 Route::middleware('auth')->group(function () {

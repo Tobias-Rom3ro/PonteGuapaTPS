@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="{{ asset('styles/login.css') }}">
     <link rel="icon" href="{{ asset('resources/icons/icon.png') }}" type="image/png">
 </head>
+
 <body>
 <div class="background-container">
     <img src="{{ asset('resources/images/background.jpeg') }}" alt="Fondo" class="background-image"/>
@@ -75,4 +76,6 @@
         </div>
     </div>
 </main>
+
+<script src="{{ asset('js/PasswordVisibility.js') }}"></script>
 
