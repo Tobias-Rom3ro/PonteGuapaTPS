@@ -198,7 +198,7 @@ php artisan migrate
 6. **Crear datos de prueba (ejecutar los seeders de datos)**
 
 ```bash
-php artisan db:seed
+php artisan migrate:fresh --seed
 ```
 
 7. **Iniciar el servidor**
