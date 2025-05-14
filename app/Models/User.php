@@ -15,6 +15,9 @@ class User extends Authenticatable implements FilamentUser
 
     protected $fillable = [
         'name',
+        'apellido',
+        'fecha_nacimiento',
+        'telefono',
         'email',
         'password',
     ];
@@ -29,11 +32,18 @@ class User extends Authenticatable implements FilamentUser
         return [
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
+            'fecha_nacimiento' => 'date',
         ];
     }
 
     public function canAccessPanel(Panel $panel): bool
     {
         return true;
+    }
+
+    // Accesorio para obtener nombre completo
+    public function getNombreCompletoAttribute(): string
+    {
+        return $this->name . ' ' . $this->apellido;
     }
 }

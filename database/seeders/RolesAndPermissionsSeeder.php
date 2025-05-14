@@ -17,7 +17,7 @@ class RolesAndPermissionsSeeder extends Seeder
         $empleadoRole = Role::create(['name' => 'empleado']);
         $usuarioRole = Role::create(['name' => 'usuario']);
 
-        // Crear permisos
+        // Crear permisos de usuarios
         $viewAnyUsers = Permission::create(['name' => 'view any users']);
         $viewUser = Permission::create(['name' => 'view user']);
         $createUser = Permission::create(['name' => 'create user']);
@@ -25,17 +25,26 @@ class RolesAndPermissionsSeeder extends Seeder
         $deleteUser = Permission::create(['name' => 'delete user']);
         $editOwnProfile = Permission::create(['name' => 'edit own profile']);
 
+        // Permisos para tipos de servicios
+        $manageTipoServicios = Permission::create(['name' => 'manage tipo servicios']);
+        $viewTipoServicios = Permission::create(['name' => 'view tipo servicios']);
+
+        // Permisos para servicios
+        $manageServicios = Permission::create(['name' => 'manage servicios']);
+        $viewServicios = Permission::create(['name' => 'view servicios']);
+
         // Asignar permisos a roles
         $adminRole->givePermissionTo([
-            $viewAnyUsers, $viewUser, $createUser, $updateUser, $deleteUser, $editOwnProfile
+            $viewAnyUsers, $viewUser, $createUser, $updateUser, $deleteUser, $editOwnProfile,
+            $manageTipoServicios, $viewTipoServicios, $manageServicios, $viewServicios
         ]);
 
         $empleadoRole->givePermissionTo([
-            $editOwnProfile
+            $editOwnProfile, $viewTipoServicios, $viewServicios
         ]);
 
         $usuarioRole->givePermissionTo([
-            $editOwnProfile
+            $editOwnProfile, $viewTipoServicios, $viewServicios
         ]);
 
         // Crear usuarios por defecto

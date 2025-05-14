@@ -48,6 +48,17 @@ class UserResource extends Resource
                     ->required()
                     ->maxLength(255)
                     ->label('Nombre'),
+                Forms\Components\TextInput::make('apellido')
+                    ->maxLength(45)
+                    ->label('Apellido'),
+                Forms\Components\DatePicker::make('fecha_nacimiento')
+                    ->label('Fecha de Nacimiento')
+                    ->format('Y-m-d')
+                    ->maxDate(now()),
+                Forms\Components\TextInput::make('telefono')
+                    ->label('Teléfono')
+                    ->tel()
+                    ->maxLength(15),
                 Forms\Components\TextInput::make('email')
                     ->email()
                     ->required()
@@ -76,10 +87,18 @@ class UserResource extends Resource
                     ->searchable()
                     ->sortable()
                     ->label('Nombre'),
+                Tables\Columns\TextColumn::make('apellido')
+                    ->searchable()
+                    ->sortable()
+                    ->label('Apellido'),
                 Tables\Columns\TextColumn::make('email')
                     ->searchable()
                     ->sortable()
                     ->label('Email'),
+                Tables\Columns\TextColumn::make('telefono')
+                    ->searchable()
+                    ->label('Teléfono')
+                    ->toggleable(),
                 Tables\Columns\TextColumn::make('roles.name')
                     ->badge()
                     ->label('Roles'),

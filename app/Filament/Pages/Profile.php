@@ -5,6 +5,7 @@ namespace App\Filament\Pages;
 use Filament\Pages\Page;
 use Filament\Forms\Form;
 use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\Section;
 use Filament\Notifications\Notification;
 use Illuminate\Support\Facades\Hash;
@@ -28,6 +29,9 @@ class Profile extends Page implements HasForms
         $user = auth()->user();
         $this->form->fill([
             'name' => $user->name,
+            'apellido' => $user->apellido,
+            'fecha_nacimiento' => $user->fecha_nacimiento,
+            'telefono' => $user->telefono,
             'email' => $user->email,
         ]);
     }
@@ -41,6 +45,17 @@ class Profile extends Page implements HasForms
                         TextInput::make('name')
                             ->label('Nombre')
                             ->required(),
+                        TextInput::make('apellido')
+                            ->label('Apellido')
+                            ->maxLength(45),
+                        DatePicker::make('fecha_nacimiento')
+                            ->label('Fecha de Nacimiento')
+                            ->format('Y-m-d')
+                            ->maxDate(now()),
+                        TextInput::make('telefono')
+                            ->label('Teléfono')
+                            ->tel()
+                            ->maxLength(15),
                         TextInput::make('email')
                             ->label('Email')
                             ->email()
@@ -73,6 +88,9 @@ class Profile extends Page implements HasForms
 
         // Actualizar información básica
         $user->name = $data['name'];
+        $user->apellido = $data['apellido'];
+        $user->fecha_nacimiento = $data['fecha_nacimiento'];
+        $user->telefono = $data['telefono'];
         $user->email = $data['email'];
 
         // Actualizar contraseña si se proporciona
