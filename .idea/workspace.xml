@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9e715ca5-83aa-4b97-9e1b-05aaae7c1e36" name="Changes" comment="Add Filament Admin Panel provider and implement password visibility feature">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="9e715ca5-83aa-4b97-9e1b-05aaae7c1e36" name="Changes" comment="Cambios en el .env relacionados con las claves de acceso">
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -281,7 +281,7 @@
       <workItem from="1747679130702" duration="1297000" />
       <workItem from="1747680617215" duration="7491000" />
       <workItem from="1747688229114" duration="15275000" />
-      <workItem from="1747878028689" duration="2347000" />
+      <workItem from="1747878028689" duration="2672000" />
     </task>
     <task id="LOCAL-00001" summary="Add Filament Admin Panel provider and implement password visibility feature">
       <option name="closed" value="true" />
@@ -307,7 +307,15 @@
       <option name="project" value="LOCAL" />
       <updated>1747878074457</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Cambios en el .env relacionados con las claves de acceso">
+      <option name="closed" value="true" />
+      <created>1747882438616</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1747882438617</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -326,6 +334,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Add Filament Admin Panel provider and implement password visibility feature" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add Filament Admin Panel provider and implement password visibility feature" />
+    <MESSAGE value="Cambios en el .env relacionados con las claves de acceso" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cambios en el .env relacionados con las claves de acceso" />
   </component>
 </project>
