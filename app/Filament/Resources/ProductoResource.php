@@ -36,7 +36,7 @@ class ProductoResource extends Resource
                 Forms\Components\TextInput::make('precio')
                     ->required()
                     ->numeric()
-                    ->prefix('€')
+                    ->prefix('$')
                     ->minValue(0)
                     ->step(0.01),
 
@@ -74,7 +74,7 @@ class ProductoResource extends Resource
                     ->getStateUsing(fn ($record) => $record->getImagenUrl()),
 
                 Tables\Columns\TextColumn::make('precio')
-                    ->money('EUR')
+                    ->money('COP')
                     ->sortable(),
 
                 Tables\Columns\TextColumn::make('stock')
