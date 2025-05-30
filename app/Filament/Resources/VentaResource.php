@@ -51,7 +51,11 @@ class VentaResource extends Resource
                             ->label('Tipo de Venta'),
 
                         Forms\Components\Select::make('user_id')
-                            ->relationship('cliente', 'name')
+                            ->relationship('cliente', 'name', function (Builder $query) {
+                                $query->whereHas('roles', function ($q) {
+                                    $q->where('name', 'usuario');
+                                });
+                            })
                             ->searchable()
                             ->preload()
                             ->required()

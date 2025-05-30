@@ -21,7 +21,7 @@ class EditCita extends EditRecord
 
     public function form(Form $form): Form
     {
-        return $this->resource::form($form);
+        return static::$resource::form($form);
     }
 
     protected function handleRecordUpdate(Model $record, array $data): Model
@@ -39,9 +39,9 @@ class EditCita extends EditRecord
     {
         // Verificar si el usuario puede editar esta cita específica
         $record = $this->getRecord();
-        
+
         abort_unless(
-            auth()->user()->hasAnyRole(['administrador', 'empleado']) || 
+            auth()->user()->hasAnyRole(['administrador', 'empleado']) ||
             auth()->id() === $record->user_id,
             403
         );

@@ -32,8 +32,9 @@ class Producto extends Model
 
     public function setImagen($imagen)
     {
+        // Borra la imagen anterior si existe
         if ($this->imagen_id) {
-            Cloudinary::destroy($this->imagen_id);
+            Cloudinary::admin()->deleteResources([$this->imagen_id], ['resource_type' => 'image']);
         }
 
         $tag = 'producto_' . $this->id . '_' . time();
@@ -48,6 +49,7 @@ class Producto extends Model
         $this->imagen_tag = $tag;
         $this->save();
     }
+
 
     public function getImagenUrl()
     {

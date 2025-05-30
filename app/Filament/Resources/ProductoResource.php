@@ -91,9 +91,9 @@ class ProductoResource extends Resource
             ->actions([
                 Tables\Actions\EditAction::make(),
                 Tables\Actions\DeleteAction::make()
-                    ->before(function ($record) {
+                    ->before(function (Producto $record) {
                         if ($record->imagen_id) {
-                            Cloudinary::destroy($record->imagen_id);
+                            Cloudinary::admin()->deleteAssets([$record->imagen_id], ['resource_type' => 'image']);
                         }
                     }),
             ])

@@ -1,0 +1,1 @@
+{"version":1,"defects":{"Tests\\Feature\\EnvReadingTest::test_env_variable_is_read_correctly":7},"times":{"Tests\\Feature\\EnvReadingTest::test_env_variable_is_read_correctly":0.078,"Tests\\Feature\\EnvReadingTest::test_important_env_variable_is_not_null":0.004}}

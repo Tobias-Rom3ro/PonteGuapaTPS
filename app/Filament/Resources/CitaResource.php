@@ -48,7 +48,7 @@ class CitaResource extends Resource
         if (auth()->user()->hasAnyRole(['administrador', 'empleado'])) {
             return true;
         }
-        
+
         // Usuarios normales solo pueden editar sus propias citas
         return auth()->id() === $record->user_id;
     }
@@ -59,7 +59,7 @@ class CitaResource extends Resource
         if (auth()->user()->hasAnyRole(['administrador', 'empleado'])) {
             return true;
         }
-        
+
         // Usuarios normales solo pueden eliminar sus propias citas
         return auth()->id() === $record->user_id;
     }
@@ -73,11 +73,17 @@ class CitaResource extends Resource
         if ($isStaff) {
             // Si es staff, mostrar selector de usuario
             $schema[] = Forms\Components\Select::make('user_id')
-                ->relationship('user', 'name')
+                ->label('Cliente')
                 ->required()
                 ->searchable()
                 ->preload()
-                ->label('Cliente');
+                ->relationship(
+                    'user',
+                    'name',
+                    fn (Builder $query) => $query->whereHas('roles', function ($q) {
+                        $q->where('name', 'usuario');
+                    })
+                );
         } else {
             // Si es usuario normal, campo oculto con su ID
             $schema[] = Forms\Components\Hidden::make('user_id')
