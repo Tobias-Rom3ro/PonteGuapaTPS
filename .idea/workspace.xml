@@ -5,10 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9e715ca5-83aa-4b97-9e1b-05aaae7c1e36" name="Changes" comment="Update data source configurations and modify currency display in ProductoResource">
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Filament/Pages/ServiciosList.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Filament/Pages/ServiciosList.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Filament/Resources/ServicioResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Filament/Resources/ServicioResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Servicio.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Servicio.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap/providers.php" beforeDir="false" afterPath="$PROJECT_DIR$/bootstrap/providers.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/installed.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/installed.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,7 +40,7 @@
 }</component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/Tobias-Rom3ro/PonteGuapaTPS.git&quot;,
+    &quot;url&quot;: &quot;https://github.com/Tobias-Rom3ro/PonteGuapaTPS&quot;,
     &quot;accountId&quot;: &quot;93a3575c-24bc-4aca-b075-0510b634b0b6&quot;
   }
 }</component>
@@ -213,9 +214,9 @@
       <path value="$PROJECT_DIR$/vendor/laravel/framework" />
       <path value="$PROJECT_DIR$/vendor/doctrine/deprecations" />
       <path value="$PROJECT_DIR$/vendor/spatie/laravel-permission" />
-      <path value="$PROJECT_DIR$/vendor/cloudinary/cloudinary_php" />
-      <path value="$PROJECT_DIR$/vendor/cloudinary/transformation-builder-sdk" />
       <path value="$PROJECT_DIR$/vendor/cloudinary-labs/cloudinary-laravel" />
+      <path value="$PROJECT_DIR$/vendor/cloudinary/transformation-builder-sdk" />
+      <path value="$PROJECT_DIR$/vendor/cloudinary/cloudinary_php" />
     </include_path>
   </component>
   <component name="ProjectColorInfo">{
@@ -260,9 +261,6 @@
       <option name="pestRunnerSettings">
         <PestRunner configuration_file="$PROJECT_DIR$/phpunit.xml" scope="ConfigurationFile" use_alternative_configuration_file="true" />
       </option>
-      <option name="runnerSettings">
-        <PhpTestRunnerSettings configuration_file="$PROJECT_DIR$/phpunit.xml" scope="ConfigurationFile" use_alternative_configuration_file="true" />
-      </option>
       <method v="2" />
     </configuration>
   </component>
@@ -293,6 +291,8 @@
       <workItem from="1747878028689" duration="2672000" />
       <workItem from="1748399081355" duration="1519000" />
       <workItem from="1748408942496" duration="2938000" />
+      <workItem from="1748439986203" duration="2496000" />
+      <workItem from="1748466197375" duration="454000" />
     </task>
     <task id="LOCAL-00001" summary="Add Filament Admin Panel provider and implement password visibility feature">
       <option name="closed" value="true" />
