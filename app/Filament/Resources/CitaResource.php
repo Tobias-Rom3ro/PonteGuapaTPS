@@ -218,4 +218,29 @@ class CitaResource extends Resource
         }
         return static::getModel()::create($data);
     }
+
+    protected static function sendStatusUpdateNotification(Cita $cita, string $newStatus): void
+    {
+        $statusLabels = [
+            'pendiente' => 'Pendiente',
+            'confirmada' => 'Confirmada',
+            'cancelada' => 'Cancelada',
+            'completada' => 'Completada',
+        ];
+
+        $statusColors = [
+            'pendiente' => 'warning',
+            'confirmada' => 'success',
+            'cancelada' => 'danger',
+            'completada' => 'info',
+        ];
+
+        // Notificar al cliente sobre el cambio de estado
+        Notification::make()
+            ->title('Estado de cita actualizado')
+            ->body("Tu cita para {$cita->servicio->nombre} ahora está: {$statusLabels[$newStatus]}")
+            ->icon('heroicon-o-bell')
+            ->color($statusColors[$newStatus])
+            ->sendToDatabase($cita->user);
+    }
 }

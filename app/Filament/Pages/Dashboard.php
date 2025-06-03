@@ -11,6 +11,10 @@ use Filament\Pages\Dashboard as BaseDashboard;
 
 class Dashboard extends BaseDashboard
 {
+    public function getTitle(): string
+    {
+        return '¡Bienvenida!';
+    }
     public function getWidgets(): array
     {
         return [
